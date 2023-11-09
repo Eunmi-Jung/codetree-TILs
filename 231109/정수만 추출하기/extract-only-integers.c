@@ -1,17 +1,6 @@
 #include <stdio.h>
 #include<string.h>
-int atoi(char s[])
-{
-    int i;
-    int num=0;
-    for(i=0;i<strlen(s);i++)
-    {
-       if(s[i]>='0'&&s[i]<='9')
-         num=num*10+(s[i]-'0');
-        else
-         return num; 
-    }
-}
+int atoi(char s[]);
 int main() {
     // 여기에 코드를 작성해주세요.
     char st[2][9];
@@ -25,4 +14,16 @@ int main() {
     printf("%d",a+b);
 
     return 0;
+}
+int atoi(char s[])
+{
+    int i;
+    int num=0;
+    for(i=0;i<strlen(s);i++)
+    {
+       if(s[i]>='0'&&s[i]<='9')
+         num=num*10+(s[i]-'0');
+        else
+         return num; 
+    }
 }
