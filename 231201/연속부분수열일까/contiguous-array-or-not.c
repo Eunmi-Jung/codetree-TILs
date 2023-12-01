@@ -13,10 +13,11 @@ int fun(int *x, int *y, int n, int m)
     {
         if(x[i]==y[0])
           {
+            if(n-i<m) return 0;
              start=i;
             for(j=1;i<=n;i++)
               if(j<m && x[start+j]!=y[j]) return 0;
-          
+  
           }
     }
         
