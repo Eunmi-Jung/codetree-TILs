@@ -16,14 +16,16 @@ int fun(int *x, int *y, int n, int m)
           {
             if(n-i<m-1) return 0;
              start=i;
-            for(j=1;j<m;j++)
+            for(j=1;j<m;j++){
+              if(start+j>=n) return 0;
               if( x[start+j]!=y[j]) return 0;
+            }
             if(j==m)  return 1;
   
           }
     }
-    if(i==n) return 0;   
-    return 1;
+    
+    return 0;
 
 }
 int main() {
