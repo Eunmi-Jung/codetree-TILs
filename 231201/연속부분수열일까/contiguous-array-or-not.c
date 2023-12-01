@@ -8,24 +8,24 @@ void input(int *p,int k)
 }
 int fun(int *x, int *y, int n, int m)
 {
-    int i,j,start;
+    int i,j;
+    int flag=0;
    
     for(i=0;i<n;i++)
     {
         if(x[i]==y[0])
           {
-            if(n-i<m-1) return 0;
-             start=i;
+              flag=1;
             for(j=1;j<m;j++){
-              if(start+j>=n) return 0;
-              if( x[start+j]!=y[j]) return 0;
+              if(i+j>=n) {flag=0; break;}
+              if( x[i+j]!=y[j]) {flag=0;break;}
             }
-            if(j==m)  return 1;
+            if(j==m) break;
   
           }
     }
     
-    return 0;
+    return flag;
 
 }
 int main() {
